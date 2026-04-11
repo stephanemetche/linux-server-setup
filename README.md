@@ -1,23 +1,47 @@
-
+ 
 # Linux Server Setup
+
+French version available in [README_FR.md](README_FR.md)
 
 This project demonstrates how to configure a secure Linux server using basic Devops practices.
 
-## Features
+## what this project does
 
-- User creation and sudo configuration
-- SSH installation and basic hardening
-- Firewell configuration (UFW)
-- basic system security
+this project shows how to:
+
+- cccreate a user and configure sudo
+- secure SSH access
+- set up a firewall with UFW
+- apply basic system hardening
+- automate setuo with a Bash script
 
 ## Project Structure
 
-scripts/ -> automation scripts
-docs/ -> step-by-step documentation
+```
+linux-server-setup/
+-README.md
+-README_FR.md
+-scripts/
+ - bassic_server_setup.sh
+- docs/
+   - 01-user-and-sudo.md
+   - 02-ssh-hardening.md
+   - 03-firewall-ufw.md
+   - 04-basic-hardening.md
+```
+Run the scripts:
 
-## Goal
+```bash
+chmod +x scripts/basic_server_setup.sh
+./scripts/basic_server_setup.sh
+```
+Or follow the steps in the `docs/`folder.
 
-Build a clean and practical server setup process.
+## Notes
+
+This is beginner-friendly project focused on clarity and pratical usage.
+
+
 
 ## Author 
 
