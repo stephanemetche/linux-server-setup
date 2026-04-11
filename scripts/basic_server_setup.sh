@@ -1,20 +1,24 @@
+#!/usr/bin/env bash
 
-#!/bin/bash
+set -e  
 
-echo "Updating system..."
-apt update
+echo "Updating system list ..."
+sudo   apt update 
 
-echo "Upgrading system..."
-apt upgrade -y
+echo "Upgrading installing packages..."
+sudo  apt upgrade -y
+ 
+echo "Installing required packages..."
+sudo  apt install -y s openssh-server ufw fail2ban vim curl wget
 
-echo "Installing essential packages..."
-apt install -y sudo vim ufw openssh-server curl wget
-
-echo "Allow SSH..." 
-ufw allow OpenSSH
+echo "Allowing SSH through the firewall..." 
+sudo  ufw allow OpenSSH
 
 echo "Enable firewall..."
-ufw --force enable
+sudo  ufw --force enable
 
-echo "Done."
+echo  "checking SSH service status..."
+sudo   systemctl status ssh --no-pager
+
+echo "Basic server setup completed."
 
