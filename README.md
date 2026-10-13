@@ -2,7 +2,7 @@
 
 A practical guide to securing a **Debian** server with basic DevOps good practices.
 
-🇫🇷 Version française : [README_FR.md](README_FR.md)
+🇫🇷 Version française : [README_FR.md](README_FR.md) 
 
 ## Goals
 
