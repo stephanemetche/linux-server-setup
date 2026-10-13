@@ -1,24 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e
 
-set -e  
+# Mise à jour du système
+sudo apt update
+sudo apt upgrade -y
 
-echo "Updating system list ..."
-sudo   apt update 
+# Installation des paquets de base
+sudo apt install -y openssh-server ufw fail2ban vim curl wget
 
-echo "Upgrading installing packages..."
-sudo  apt upgrade -y
- 
-echo "Installing required packages..."
-sudo  apt install -y s openssh-server ufw fail2ban vim curl wget
+# Pare-feu : autoriser SSH avant d'activer UFW
+sudo ufw allow OpenSSH
+sudo ufw --force enable
 
-echo "Allowing SSH through the firewall..." 
-sudo  ufw allow OpenSSH
-
-echo "Enable firewall..."
-sudo  ufw --force enable
-
-echo  "checking SSH service status..."
-sudo   systemctl status ssh --no-pager
+# Vérification du service SSH
+sudo systemctl status ssh --no-pager
 
 echo "Basic server setup completed."
-
