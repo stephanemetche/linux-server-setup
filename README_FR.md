@@ -1,50 +1,54 @@
 # Linux Server Setup
 
-Version française du projet.
+Guide pratique pour sécuriser un serveur **Debian** avec les bonnes pratiques DevOps de base.
 
-## objectif du projet 
+🇬🇧 English version: [README.md](README.md)
 
-Ce projet montre comment configurer et sécuriser un serveur Linux de manière simple et pratique.
+## Objectifs
 
-## ce que fait ce projet 
-
-Ce projet permet de :
-
-- créer un utilisateur et configurer sudo
-- sécuriser l'accès SSH
-- mettre en place un firewall avec UFW
-- appliquer un durcissement basique du système
-- automatiset la configuration avec un script Bash
+- Créer un utilisateur non root et configurer `sudo`
+- Sécuriser l'accès SSH (désactiver la connexion root)
+- Mettre en place un pare-feu avec UFW
+- Appliquer un durcissement de base (mises à jour du système, fail2ban)
+- Automatiser l'installation de base avec un script Bash
 
 ## Structure du projet
 
-```
+```text
 linux-server-setup/
-- README.md
-- README_FR.md
-- scripts/
-  - basic_server_setup.sh
--docs/
-  - 01-user-and-sudo.md
-  - 02-ssh-hardening.md
-  - 03-firewall-ufw.md
-  - 04-basic-hardening.md
+├── docs/
+│   ├── 01-user-and-sudo.md
+│   ├── 02-ssh-hardening.md
+│   ├── 03-firewall-ufw.md
+│   └── 04-basic-hardening.md
+├── scripts/
+│   └── basic_server_setup.sh
+├── README.md
+└── README_FR.md
 ```
 
-## Utilisateur 
+## Utilisation
 
-Exécuter le script : 
+Lancer le script :
 
 ```bash
-chmod + x scripts/basic_server_setup.sh
-.scripts/basic_server_setup.sh
+chmod +x scripts/basic_server_setup.sh
+./scripts/basic_server_setup.sh
 ```
-ou suivre les étapes dans le dossier `docs`.
 
-## Remarque
+Ou suivre les guides pas à pas du dossier `docs/`.
 
-Ce projet est volontairement simple et orienté pratique.
+> Le script ne crée pas d'utilisateur et ne modifie pas la configuration SSH.
+> Ces étapes se font manuellement avec `docs/01-user-and-sudo.md` et `docs/02-ssh-hardening.md`.
 
-## Auteur 
+## Feuille de route (version 2)
 
-Stéphane Metche
+- Authentification SSH par clés et `PasswordAuthentication no`
+- Mises à jour de sécurité automatiques avec `unattended-upgrades`
+- Configuration de fail2ban pour SSH
+
+## À propos
+
+Projet pour débutants, axé sur la clarté et la pratique.
+
+Auteur : Stéphane Metche
