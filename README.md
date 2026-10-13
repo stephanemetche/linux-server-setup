@@ -6,7 +6,7 @@ A practical guide to securing a **Debian** server with basic DevOps good practic
 
 ## Goals
 
-- Create a non-root user and configure `sudo`
+- Create a non-root user and configure `sudo` 
 - Secure SSH access (disable root login)
 - Set up a firewall with UFW
 - Apply basic hardening (system updates, fail2ban)
