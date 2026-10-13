@@ -1,48 +1,54 @@
- 
 # Linux Server Setup
 
-French version available in [README_FR.md](README_FR.md)
+A practical guide to securing a **Debian** server with basic DevOps good practices.
 
-This project demonstrates how to configure a secure Linux server using basic Devops practices.
+🇫🇷 Version française : [README_FR.md](README_FR.md)
 
-## what this project does
+## Goals
 
-this project shows how to:
+- Create a non-root user and configure `sudo`
+- Secure SSH access (disable root login)
+- Set up a firewall with UFW
+- Apply basic hardening (system updates, fail2ban)
+- Automate the base setup with a Bash script
 
-- cccreate a user and configure sudo
-- secure SSH access
-- set up a firewall with UFW
-- apply basic system hardening
-- automate setuo with a Bash script
+## Project structure
 
-## Project Structure
-
-```
+```text
 linux-server-setup/
--README.md
--README_FR.md
--scripts/
- - bassic_server_setup.sh
-- docs/
-   - 01-user-and-sudo.md
-   - 02-ssh-hardening.md
-   - 03-firewall-ufw.md
-   - 04-basic-hardening.md
+├── docs/
+│   ├── 01-user-and-sudo.md
+│   ├── 02-ssh-hardening.md
+│   ├── 03-firewall-ufw.md
+│   └── 04-basic-hardening.md
+├── scripts/
+│   └── basic_server_setup.sh
+├── README.md
+└── README_FR.md
 ```
-Run the scripts:
+
+## Usage
+
+Run the script:
 
 ```bash
 chmod +x scripts/basic_server_setup.sh
 ./scripts/basic_server_setup.sh
 ```
-Or follow the steps in the `docs/`folder.
 
-## Notes
+Or follow the step-by-step guides in the `docs/` folder.
 
-This is beginner-friendly project focused on clarity and pratical usage.
+> The script does not create a user or modify the SSH configuration.
+> Do these steps manually with `docs/01-user-and-sudo.md` and `docs/02-ssh-hardening.md`.
 
+## Roadmap (version 2)
 
+- SSH key authentication and `PasswordAuthentication no`
+- Automatic security updates with `unattended-upgrades`
+- fail2ban configuration for SSH
 
-## Author 
+## About
 
-Stéphane Metche
+Beginner-friendly project focused on clarity and hands-on practice.
+
+Author: Stéphane Metche
